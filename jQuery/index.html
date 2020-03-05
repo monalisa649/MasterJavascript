@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--<script
+        forma de integrar jQuery copiando el CDN, la otra forma es inglresnado al link del src, click derecho guardar como
+        y guardarlo en la carpeta del proyecto, luego se carga en un script
+			  src="https://code.jquery.com/jquery-3.4.1.min.js"
+			  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+              crossorigin="anonymous"></script>-->
+              
+              <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script><!--Cargando libreria jQuery-->
+              <script  type ="text/javascript" src="selectores.js"></script>
+              <style>
+                  .zebra{
+                      border: dashed black;
+                  }
+
+                  .grande{
+                      font-size: 30px;
+                  }
+                  .margen-superior{
+                    display: block;
+                    margin-top: 45px;
+                      
+                  }
+                  .resaltado{
+                      border-bottom: 2px solid brown;
+                  }
+              </style>
+              
+    <title>jQuery</title>
+</head>
+<body>
+    <h1>Ejercicios jquery</h1>
+    <p id="rojo" class="sin_borde">Ejercicios con jQuery</p>
+    <p id="amarillo" class="zebra"> Practicando con Selectores</p>
+    <p id="verde" class="sin_borde"> Quiero ser un parrafo verde</p>
+    <p class="zebra">Soy un parrafo blanco</p>
+
+    
+        <ul>
+            <li><a href="https://www.google.com" title="Google">Google</a></li>
+            <li><a href="https://www.facebook.com" title="Facebook">Facebook</a></li>
+        </ul>
+
+    <div id="caja">
+        <p>Soy una caja</p>
+        <ul>
+            <li class="resaltado">Elemento 1</li>
+            <li>Elemento 2</li>
+            
+        </ul>
+        <span class="resaltado">Soy un span</span>
+    </div>
+    
+</body>
+</html>
