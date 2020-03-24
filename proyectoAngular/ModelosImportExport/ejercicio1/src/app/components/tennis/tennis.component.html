@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Modelo_Import_Export</title>
+</head>
+<body>
+  
+  <ul >
+    <li *ngFor="let zapato of zapatillas">{{zapato.marca}}- <strong>{{zapato.talla}}-{{zapato.precio}}-</strong>
+        <span *ngIf="zapato.precio == 3900 "
+            [style.background]="zapato.precio == 3900 ? 'red' : 'transparent'"
+            [style.color]="zapato.precio == 3900 ? 'white' : 'black'">¡EN OFERTA!</span> 
+    </li>
+    
+  </ul>
+</body>
+</html>

@@ -6,12 +6,11 @@ import { Configuracion } from './modelos/configuracion';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
- public title: string;
- public  descripcion: string; 
+export class AppComponent  {
 
   constructor(){
-    this.title = Configuracion.titulo;
-    this.descripcion = Configuracion.descripcion;
-  }
+    
+  };
+
+  
 }
