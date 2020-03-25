@@ -6,6 +6,7 @@ export class tennis{
         public talla: number,
         public color: string,
         public precio: number,
+        public stock: boolean,
     ){
         
 
