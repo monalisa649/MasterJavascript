@@ -8,9 +8,20 @@
 </head>
 
 <body>
-  <h1>Las marcas disponibles de zapatillas</h1>
+  
+  
+  <h2>Las marcas disponibles de zapatillas</h2>
+
+  
+  <div>
+    <input type="text" [(ngModel)]="nuevaMarca" (blur)="onBlur()" (keyup.enter)="onKeyup()">
+    <button (click)="guardarMarca()">Guardar</button>
+   
+   
+  </div>
   <ul>
-    <li *ngFor="let marca of marcas">{{marca}}</li>
+    <li *ngFor="let marca of marcas; let indice = index">{{marca}}<button (click)="eliminarMarca(indice)">Eliminar</button></li>
+    
   </ul>
   <p>Las zapatillas que tenemos diponibles son las siguientes:</p>
   <ul>
@@ -18,17 +29,30 @@
     <li *ngFor="let zapato of zapatillas">
       <span [ngStyle]="{
         'text-decoration':!zapato.stock ? 'line-through' : 'none'
-      }">
-        {{zapato.marca}}- <strong>{{zapato.talla}}-{{zapato.precio}}-</strong>
+      }" >
+        {{zapato.marca}}- {{zapato.talla}}- <strong [class.altoprecio]="zapato.precio >= 3900"
+          [ngClass]="{
+            'colorRojo':zapato.precio >= 5000,
+            'letraBlanca':zapato.precio < 5000
+          }">{{zapato.precio}}-</strong>
       </span>
 
       <span *ngIf="zapato.precio == 3900 " [style.background]="zapato.precio == 3900 ? 'red' : 'transparent'"
-        [style.color]="zapato.precio == 3900 ? 'white' : 'black'">¡EN OFERTA!</span>
+        [style.color]="zapato.precio == 3900 ? 'white' : 'black'"
+        >¡EN OFERTA!</span>
 
 
 
     </li>
 
+  </ul>
+  <input type="text" [(ngModel)]="color">
+  <ul [ngSwitch]="color">
+    <li *ngSwitchCase="'yellow'">El color predominante es  <span [ngStyle]="{'background': color}">yellow</span></li>
+    <li *ngSwitchCase="'red'">El color predominante es  <span [ngStyle]="{'background': color}">red</span></li>
+    <li *ngSwitchCase="'blue'">El color predominante es  <span [ngStyle]="{'background': color}">blue</span></li>
+
+   
   </ul>
 </body>
 

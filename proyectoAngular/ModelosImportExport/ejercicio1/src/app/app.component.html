@@ -1,2 +1,12 @@
 
-<app-tennis></app-tennis>
+<!--<app-tennis></app-tennis>-->
+<h1>Bienvenidos a este proyecto donde aprendo Angular :)</h1>
+    <hr>
+    <nav>
+        <a [routerLink]="['/home']" [routerLinkActive]="['active']">Home </a>
+        &nbsp;
+        <a [routerLink]="['/tennis']" [routerLinkActive]="['active']">Tennis </a>
+        &nbsp;
+        <a [routerLink]="['/zapatillas']" [routerLinkActive]="['active']">Zapatillas </a> <!--'active es una clase de css'-->
+    </nav>
+<router-outlet></router-outlet>
