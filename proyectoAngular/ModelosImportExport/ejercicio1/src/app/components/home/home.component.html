@@ -6,6 +6,23 @@
     <title>Document</title>
 </head>
 <body>
+    <h2>Página principal</h2>
+    <div *ngIf="identificado; then  upIdentificado  else noIdentificado "> 
+    </div>
+
+    <ng-template #upIdentificado>
+        <h3>Bienvenido</h3>
+        <button (click)="unIdentificase()">Borrar identificación</button>
+        </ng-template>
+
+    
+
+    <ng-template #noIdentificado>
+        <p>No estas identificado</p>
+        <button (click)="setIdentificarse()">Identificarse</button>
+    </ng-template>
+
+
     
     
     

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Configuracion } from 'src/app/modelos/configuracion';
 import { tennis } from 'src/app/modelos/tenis';
 import { newArray } from '@angular/compiler/src/util';
+import { ZapatillaService } from 'src/app/services/zapatilla.service';
 
 @Component({
   selector: 'app-tennis',
@@ -15,24 +16,17 @@ export class TennisComponent implements OnInit {
   public nuevaMarca:string;
   
   
-constructor(){
+constructor( public zapatillaService: ZapatillaService){
   //this.color = "red";
   this.marcas = new Array();
-  this.zapatillas= [
-    new tennis('Nike','xx',36,'xxx',3900, false),
-    new tennis('Adidas','xx',36,'xxx', 5000, true),
-    new tennis('Reebok','xx',36,'xxxx', 2000, false),
-    new tennis('Nike','xx',36,'xxx',3900, true),
-    new tennis('Adidas','xx',36,'xxx', 8000, true),
-    new tennis('Reebok','xx',36,'xxxx', 2000, false),
-    
-    
-  ];
+  
 }
 
   ngOnInit(){
+    this.zapatillas = this.zapatillaService.getZapatillas();
     console.log(this.zapatillas);
     this.GetMarca();
+    
     
   }
   GetMarca(){
