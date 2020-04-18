@@ -12,9 +12,15 @@ export class ExternoComponent implements OnInit {
 
   public user: any;
   public userId:any;
+  public new_user:any;
+
 
   constructor(public peticionService: PeticionService) {
     this.userId = 1;
+    this.new_user = {
+      "name" : "",
+      "job":  ""
+    };
    }
 
   ngOnInit() {
@@ -38,5 +44,15 @@ export class ExternoComponent implements OnInit {
 
       );
   } 
-  
+   newUser(form){
+     this.peticionService.addUser(this.new_user)
+     .subscribe(
+       response =>{
+         console.log(response);
+         form.reset();
+       }, error =>{
+        console.log(<any>error);
+     });
+
+   }
 }

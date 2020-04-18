@@ -8,7 +8,7 @@ import { HomeComponent } from './components/home/home.component';
 import { TennisComponent } from './components/tennis/tennis.component';
 import { ZapatillaComponent } from './components/zapatilla/zapatilla.component';
 import { ExternoComponent } from './components/externo/externo.component';
-
+import { ContactoComponent } from './components/contacto/contacto.component';
 
 
 //Array de rutas
@@ -19,6 +19,7 @@ const appRoutes: Routes=[
  {path: 'zapatillas/:nombre', component:ZapatillaComponent},
  {path: 'zapatillas/:nombre/:edad', component:ZapatillaComponent},
  {path: 'externo', component:ExternoComponent},
+ {path: 'contacto', component: ContactoComponent},
  {path:'**', component:HomeComponent },
 ];
 

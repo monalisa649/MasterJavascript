@@ -1,6 +1,19 @@
+<h2>Nuevo Usuario</h2>
+<form #formPost= "ngForm" (ngSubmit)="newUser(formPost)">
+   <label for="nombre"> Nombre</label>
+   <input type="text"  name="nombre" #nombre="ngModel" [(ngModel)]="new_user.name" required pattern="[a-Az-Z]+">
+   <span *ngIf="nombre.touched && !nombre.valid">El campo esta vacio</span>
 
+   <label for="nombre"> Trabajo</label>
+   <input type="text"  name="nombre" #job="ngModel" [(ngModel)]="new_user.job" required pattern="[a-Az-Z]+">
+   <span *ngIf="job.touched && !job.valid">El campo esta vacio</span>
+
+   <input type="submit" value="Enviar" [disabled]="!formPost.form.valid">
+</form>
     
 
+    
+    
     <h1>Lista de usuarios</h1>
     <input type="text" [(ngModel)]="userId" (keyup.enter)="loadUser()">
     <div *ngIf="!user">

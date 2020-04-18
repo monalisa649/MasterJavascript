@@ -11,6 +11,7 @@ import { ZapatillaService } from './services/zapatilla.service';
 import { ExternoComponent } from './components/externo/externo.component';
 import { PeticionService } from './services/peticion.service';
 import { HttpClientModule } from '@angular/common/http';
+import { ContactoComponent } from './components/contacto/contacto.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { HttpClientModule } from '@angular/common/http';
     TennisComponent,
     ZapatillaComponent,
     HomeComponent,
-    ExternoComponent
+    ExternoComponent,
+    ContactoComponent
   ],
   imports: [
     BrowserModule,
