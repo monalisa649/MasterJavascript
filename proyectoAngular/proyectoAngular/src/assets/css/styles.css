@@ -1,0 +1,12 @@
+@font-face{
+    font-family: "yanone";
+    src:url("./fonts/YanoneKaffeesatz-Regular.ttf"),
+        url("./fonts/YanoneKaffeesatz-Bold.ttf");
+    
+}
+
+body{
+    background: black;
+    color: white;
+    font-family: "yanone", Arial, Helvetica;
+}
